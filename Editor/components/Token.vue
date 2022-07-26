@@ -1,9 +1,9 @@
 <template>
-  <span class="token" :style="cssVars" :id="id">
+  <div class="token" :style="cssVars" :id="'token_'+id">
     <div class="above">{{ this.above }}</div>
     <div class="txt">{{ this.text }}</div>
     <div class="below">{{ this.below }}</div>
-  </span>
+  </div>
 </template>
 
 <script>
