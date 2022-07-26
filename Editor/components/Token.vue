@@ -1,6 +1,6 @@
 <template>
   <div class="token" :style="cssVars" :id="'token_'+id">
-    <div class="above">{{ this.above }}</div>
+    <div class="above" :style="aboveStyle">{{ this.above }}</div>
     <div class="txt">{{ this.text }}</div>
     <div class="below">{{ this.below }}</div>
   </div>
@@ -12,6 +12,7 @@ export default {
     return {
       color: "000",
       above:"",
+      aboveStyle:"#000",
       below:""
     };
   },
@@ -20,6 +21,11 @@ export default {
     if(this.$store.state.editorData.data.above != null && this.$store.state.editorData.data.above != undefined && this.$store.state.editorData.data.above.length > this.id)
       {
         this.above = this.$store.state.editorData.data.above[this.id];
+      }
+      if(this.$store.state.editorData.data.aboveColor != null && this.$store.state.editorData.data.aboveColor != undefined && this.$store.state.editorData.data.aboveColor.length > this.id)
+      {
+        this.aboveStyle = "color:white; background-color:"+this.$store.state.editorData.data.aboveColor[this.id];
+        
       }
     if(this.$store.state.editorData.data.below != null && this.$store.state.editorData.data.below != undefined && this.$store.state.editorData.data.below.length > this.id)
       {

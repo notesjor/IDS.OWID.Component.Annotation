@@ -66,6 +66,10 @@ export default {
     wrapper.style.border = "1px solid #f00";
     wrapper.style.display = "inline";
     wrapper.style.paddingTop = "40px";
+
+
+
+    
   },
   watch: {
     textViewData: {
